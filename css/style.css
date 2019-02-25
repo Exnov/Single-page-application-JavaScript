@@ -1,0 +1,255 @@
+/* 
+********************************************************************
+-1- Sous-couche réservation (pour signature de la réservation)
+-2- Contenu bloc page
+-3- Header et Footer
+-4- Diaporama
+-5- Carte et réservation
+-6- Breakpoints
+********************************************************************
+*/
+
+
+/* 
+************************************************
+-1- Sous-couche réservation
+************************************************
+*/
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/* 
+************************************************
+-2- Contenu bloc page
+************************************************
+*/
+#bloc_page{
+	margin-top:40px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* 
+************************************************
+-3- Header et Footer
+************************************************
+*/
+header,footer{
+	background-color: #5863f7 !important;
+}
+
+header h1, footer a, footer p{
+	color:white;	
+}
+
+header p{
+	color:#29292b;
+}
+
+.fa-bicycle{
+	color:white;
+}
+
+/*animation <i> vélo*/
+@keyframes animation_velo {
+
+    33% {
+        transform:scale(0.7) rotate(-45deg);
+        color:#f83535; 
+    }
+    66% {
+        transform:scale(1.2);
+    }
+
+}
+/*safari, chrome, opera*/
+@-webkit-keyframes animation_velo {
+
+    33% {
+        transform:scale(0.7) rotate(-45deg); 
+        color:#f83535; 
+    }
+    66% {
+        transform:scale(1.2);
+    }
+}
+
+.fa-bicycle:hover{
+	animation: animation_velo 2s;
+	-webkit-animation: animation_velo 2s;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out; /* Safari 4.0 - 8.0 */
+}
+
+footer p{
+	line-height: 40px;
+}
+
+footer a{
+	transition-property: color;
+    transition-duration: 1s;
+}
+
+footer a:hover{
+	text-decoration: none;
+}
+
+/* 
+************************************************
+-4- Diaporama
+************************************************
+*/
+#images{
+	position: relative;
+}
+
+#images img{ 
+	width:100%;
+	height:auto;
+	border-bottom:10% solid black;
+}
+
+#images figcaption{
+	position: absolute;
+	font-size: 1.2em;
+	width:100%;
+	text-align: center;
+	background-color: #a9a9a9;
+	color:white;
+}
+
+/*CHEVRONS*/
+#chevron_g, #chevron_d{
+	position: absolute;
+	top:40%;
+	color:white;
+	font-size:0.9em;
+    background:#888585;
+   	padding-top:2%;
+	padding-bottom:2%;
+    transition-property: background-color;
+    transition-duration: 1s;	
+    z-index: 4;
+}
+
+#chevron_g:hover, #chevron_d:hover{
+    background:#736d6d;
+}
+
+#chevron_g{	
+	border-radius: 0 90px 90px 0;
+	padding-right:1.5%;
+	padding-left: 0.7%;
+}
+
+#chevron_d{
+	right:0;
+	border-radius: 90px 0 0 90px;
+	padding-right:0.7%;
+	padding-left: 1.5%;
+}
+
+/*PLAYER DIAPO*/
+#diapo{
+	position: absolute;
+	right:48%;
+	bottom:0;
+	color:white;
+	font-size:1.3vw;
+    background:#5863f7;
+    border-radius: 50%;
+    padding:1%;
+	z-index: 4;
+    transition-property: background-color;
+    transition-duration: 1s;	
+}
+
+#diapo:hover{
+	background:red;
+}
+
+#bandeau{
+	position: absolute;
+	background-color: #888585;
+	bottom:0;
+	width:100%;
+	height:12%;
+	z-index: 2;
+}
+
+/* 
+************************************************
+-5- Carte et réservation
+************************************************
+*/
+#carte_reservation{
+	margin-top: 45px;
+}
+
+#mapid {
+	height: 500px;
+}
+
+form{
+	border:1px solid black;
+	border-radius: 5%;
+	padding: 20px;
+}
+
+#reservation{
+	text-align: center;
+}
+
+#confirmation{
+	margin-top:20px;
+	margin-bottom: 50px;
+}
+
+/*FENETRE MODALE*/
+#modale{
+	display: none;
+	position: relative; 
+	top:20px;
+	margin:auto;
+	z-index: 1002;	
+	max-width:300px; 
+	height:300px; 
+	background-color:#5863f7;
+	border:1px solid black;
+	border-radius:5%;	
+	margin-top: 40px;	
+}
+
+#canvas{
+	border:1px solid black;
+	background-color: white;
+	border-radius:5%;
+}
+
+#validation{
+	margin-top: 10px;
+}
+/*FIN FENETRE MODALE*/
+
+/* 
+************************************************
+-6- Breakpoints
+************************************************
+*/
+@media all and (max-width: 767px){
+
+	#carte_reservation .col-md-4{
+		margin-top:25px;
+	}
+}
