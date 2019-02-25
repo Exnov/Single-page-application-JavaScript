@@ -1,7 +1,7 @@
 # p3
 "Single page Application" développée en JS, simulant la réservation de vélos à Toulouse. 
 
-## Éléments de la page :
+## Éléments de la page
 
 ### Un diaporama :
 Le diaporama explique le fonctionnement de l'application, et n'utilise aucun plugin.
